@@ -11,7 +11,6 @@ allLinks.forEach(function (link) {
   link.addEventListener("click", function (e) {
     e.preventDefault();
     const href = link.getAttribute("href");
-    console.log(href);
     if (href === "#") {
       window.scrollTo({
         top: 0,
@@ -22,6 +21,8 @@ allLinks.forEach(function (link) {
     if (href !== "#" && href.startsWith("#")) {
       const targetEl = document.querySelector(href);
       targetEl.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.open(href, "__blank");
     }
   });
 });
@@ -33,7 +34,6 @@ const sectionHeroEl = document.querySelector(".about-section");
 const observer = new IntersectionObserver(
   function (entries) {
     const entry = entries[0];
-    console.log(entry);
     if (entry.isIntersecting === true) {
       document.body.classList.remove("sticky");
     }
