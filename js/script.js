@@ -2,6 +2,14 @@ const yearEl = document.querySelector(".year");
 const currentYear = new Date().getFullYear();
 yearEl.textContent = currentYear;
 
+// Mobile Navigation
+const navBtnEl = document.querySelector(".btn-mobile-nav");
+const headerEl = document.querySelector(".header");
+
+navBtnEl.addEventListener("click", function () {
+  headerEl.classList.toggle("nav-open");
+});
+
 ///////////////////////////////////////////////////////////
 // Scroll Animation
 ///////////////////////////////////////////////////////////
@@ -21,8 +29,12 @@ allLinks.forEach(function (link) {
     if (href !== "#" && href.startsWith("#")) {
       const targetEl = document.querySelector(href);
       targetEl.scrollIntoView({ behavior: "smooth" });
+      if (headerEl.classList.contains("nav-open"))
+        headerEl.classList.remove("nav-open");
     } else {
       window.open(href, "__blank");
+      if (headerEl.classList.contains("nav-open"))
+        headerEl.classList.remove("nav-open");
     }
   });
 });

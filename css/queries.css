@@ -1,0 +1,230 @@
+/* rem and em do NOT depends on html font-size in media queries
+instead, 1rem = 1em = 16px */
+
+/*************************/
+/*BELOW 1280px (Smaller Desktops)*/
+/*************************/
+@media (max-width: 80em) {
+  html {
+    /* font-size: 10px; */
+    /* 9px / 16px = 0.625 = 62.5% */
+    /* Percentage of user's browser font size setting */
+    font-size: 56.25%;
+  }
+}
+
+/*************************/
+/*BELOW 1136px (Landscape Tablets)*/
+/*************************/
+@media (max-width: 71em) {
+  html {
+    /* font-size: 10px; */
+    /* 8px / 16px = 0.5 = 50% */
+    /* Percentage of user's browser font size setting */
+    font-size: 50%;
+  }
+}
+
+/*************************/
+/*BELOW 1008px (Tablets)*/
+/*************************/
+@media (max-width: 63em) {
+  .container {
+    max-width: 80rem;
+  }
+
+  .about-section {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-section p {
+    padding: 0;
+  }
+
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .info-form {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+  }
+
+  .theme-btn {
+    width: 100%;
+  }
+
+  /* MOBILE NAVIAGTION */
+  .btn-mobile-nav {
+    display: block;
+    z-index: 99999;
+  }
+
+  .navigation {
+    position: absolute;
+    background-color: rgba(74, 73, 73, 0.9);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translate(100%);
+    transition: all 0.5s ease-in;
+    /* On Display none we cannot add animation */
+    /* display: none; */
+
+    /* 1) Hide it visually */
+    opacity: 0;
+
+    /* 2) Make it unaccessible to mouse and keyboard */
+    pointer-events: none;
+
+    /* 3) Hide it from screen readers */
+    visibility: hidden;
+  }
+
+  .nav-open .navigation {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translate(0);
+  }
+
+  .navigation-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+
+  .nav-open .icon-menu-nav[name="close-outline"] {
+    display: block;
+  }
+
+  .nav-open .icon-menu-nav[name="menu-outline"] {
+    display: none;
+  }
+
+  .navigation-link:visited,
+  .navigation-link:link {
+    font-size: 3rem;
+  }
+}
+
+/*************************/
+/*BELOW 768px (Tablets)*/
+/*************************/
+@media (max-width: 48em) {
+  html {
+    /* font-size: 10px; */
+    /* 6px / 16px = 0.375 = 37.5% */
+    /* Percentage of user's browser font size setting */
+    font-size: 37.5%;
+  }
+
+  .container {
+    padding: 0 3.2rem;
+  }
+
+  .profile-name {
+    width: 33rem;
+  }
+
+  .profile-text {
+    width: 33rem;
+  }
+
+  .download-cv-btn:link,
+  .download-cv-btn:visited {
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+  }
+
+  .about-comanies-worked h2 {
+    text-align: center;
+  }
+
+  .company-list {
+    flex-direction: column;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .cta {
+    flex-direction: column;
+  }
+}
+
+/*************************/
+/*BELOW 544px (Tablets)*/
+/*************************/
+@media (max-width: 34em) {
+}
+
+/* 
+- FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+/*************************/
+/*FIXING FLEXBOX GAP IN SAFARI*/
+/*************************/
+
+.no-flexbox-gap .main-nav-list li:not(:last-child) {
+  margin-right: 4.8rem;
+}
+
+.no-flexbox-gap .list-item:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
+.no-flexbox-gap .list-icon:not(:last-child) {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .delivered-faces {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .meal-attribute:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.no-flexbox-gap .meal-icon {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .footer-row div:not(:last-child) {
+  margin-right: 6.4rem;
+}
+
+.no-flexbox-gap .social-links li:not(:last-child) {
+  margin-right: 2.4rem;
+}
+
+.no-flexbox-gap .footer-nav li:not(:last-child) {
+  margin-bottom: 2.4rem;
+}
+
+@media (max-width: 75em) {
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 3.2rem;
+  }
+}
+
+@media (max-width: 59em) {
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 4.8rem;
+  }
+}
