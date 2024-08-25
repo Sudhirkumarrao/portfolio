@@ -33,6 +33,10 @@ instead, 1rem = 1em = 16px */
     max-width: 80rem;
   }
 
+  .sticky .header {
+    width: 60rem;
+  }
+
   .about-section {
     grid-template-columns: 1fr;
   }
