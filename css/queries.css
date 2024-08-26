@@ -150,7 +150,8 @@ instead, 1rem = 1em = 16px */
   }
 
   .company-list {
-    flex-direction: column;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
   }
 
   .cta {

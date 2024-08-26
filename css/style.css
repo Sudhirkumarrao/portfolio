@@ -300,13 +300,15 @@ input[type="hidden"] {
 }
 
 .company-list {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   gap: 3.2rem;
   align-items: center;
+  justify-content: center;
 }
 
 .company-list img {
-  height: 3.2rem;
+  height: 2.4rem;
 }
 
 /****************************/
