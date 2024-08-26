@@ -29,13 +29,13 @@ instead, 1rem = 1em = 16px */
 /*BELOW 1008px (Tablets)*/
 /*************************/
 @media (max-width: 63em) {
-  .container {
+  /* .container {
     max-width: 80rem;
   }
 
   .sticky .header {
     width: 60rem;
-  }
+  } */
 
   .about-section {
     grid-template-columns: 1fr;
@@ -127,10 +127,6 @@ instead, 1rem = 1em = 16px */
     /* 6px / 16px = 0.375 = 37.5% */
     /* Percentage of user's browser font size setting */
     font-size: 37.5%;
-  }
-
-  .container {
-    padding: 0 3.2rem;
   }
 
   .profile-name {

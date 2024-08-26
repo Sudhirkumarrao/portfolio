@@ -44,7 +44,11 @@ body {
 .container {
   max-width: 120rem;
   margin: 0 auto;
-  /* padding: 0 3.2rem; */
+  padding: 0 3.2rem;
+}
+
+input[type="hidden"] {
+  display: none; /* Ensures no impact on the grid */
 }
 
 /****************************/
@@ -55,7 +59,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4.8rem 0;
+  padding: 4.8rem 3.2rem;
   position: relative;
 }
 
@@ -144,7 +148,7 @@ body {
   position: fixed;
   top: 0;
   bottom: 0;
-  width: 120rem;
+  width: 100%;
   padding-bottom: 0;
   padding-top: 0;
   height: 8rem;
