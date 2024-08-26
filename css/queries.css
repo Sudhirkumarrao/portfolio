@@ -153,10 +153,6 @@ instead, 1rem = 1em = 16px */
     flex-direction: column;
   }
 
-  .projects {
-    grid-template-columns: 1fr;
-  }
-
   .cta {
     flex-direction: column;
   }
@@ -166,6 +162,9 @@ instead, 1rem = 1em = 16px */
 /*BELOW 544px (Tablets)*/
 /*************************/
 @media (max-width: 34em) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* 
