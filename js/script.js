@@ -42,23 +42,33 @@ allLinks.forEach(function (link) {
 ///////////////////////////////////////////////////////////
 // Sticky Header
 ///////////////////////////////////////////////////////////
-const sectionHeroEl = document.querySelector(".about-section");
-const observer = new IntersectionObserver(
-  function (entries) {
-    const entry = entries[0];
-    if (entry.isIntersecting === true) {
-      document.body.classList.remove("sticky");
-    }
+// const sectionHeroEl = document.querySelector(".about-section");
+// const observer = new IntersectionObserver(
+//   function (entries) {
+//     const entry = entries[0];
+//     if (entry.isIntersecting === true) {
+//       document.body.classList.remove("sticky");
+//     }
 
-    if (entry.isIntersecting === false) {
-      document.body.classList.add("sticky");
-    }
-  },
-  {
-    root: null,
-    threshold: 0,
-    rootMargin: "-48px",
+//     if (entry.isIntersecting === false) {
+//       document.body.classList.add("sticky");
+//     }
+//   },
+//   {
+//     root: null,
+//     threshold: 0,
+//     rootMargin: "-48px",
+//   }
+// );
+
+// observer.observe(sectionHeroEl);
+
+window.onscroll = function () {
+  const header = document.querySelector(".header");
+  if (window.pageYOffset > 10) {
+    // Adjust this value based on when you want the sticky effect to trigger
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
   }
-);
-
-observer.observe(sectionHeroEl);
+};

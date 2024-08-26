@@ -48,7 +48,7 @@ body {
 }
 
 input[type="hidden"] {
-  display: none; /* Ensures no impact on the grid */
+  display: none !important; /* Ensures no impact on the grid */
 }
 
 /****************************/
@@ -61,6 +61,7 @@ input[type="hidden"] {
   align-items: center;
   padding: 4.8rem 3.2rem;
   position: relative;
+  transition: all 0.5s ease-in-out;
 }
 
 .logo {
@@ -144,7 +145,7 @@ input[type="hidden"] {
 }
 
 /* Sticky Header */
-.sticky .header {
+.header.sticky {
   position: fixed;
   top: 0;
   bottom: 0;
